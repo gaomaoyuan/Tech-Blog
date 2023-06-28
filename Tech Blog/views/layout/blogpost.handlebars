@@ -1,0 +1,25 @@
+{{!-- Extend the main layout template --}}
+{{#extend 'layouts/main'}}
+
+{{!-- Specify the content for the body --}}
+{{#content 'body'}}
+    <section class="blog-post">
+        <h2>{{post.title}}</h2>
+        <p>By: {{post.author}}</p>
+        <p>Date: {{post.dateCreated}}</p>
+        <div class="content">{{{post.content}}}</div>
+        <form action="/comment" method="POST">
+            <textarea name="comment" placeholder="Leave a comment"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <ul class="comments">
+            {{#each post.comments}}
+                <li>
+                    <p>{{this.author}} said:</p>
+                    <p>{{this.content}}</p>
+                    <p>Date: {{this.dateCreated}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+{{/content}}

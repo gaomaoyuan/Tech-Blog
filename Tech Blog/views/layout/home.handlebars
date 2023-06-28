@@ -1,0 +1,21 @@
+{{!-- Extend the main layout template --}}
+{{#extend 'layouts/main'}}
+
+{{!-- Specify the content for the body --}}
+{{#content 'body'}}
+    <section class="home">
+        <h2>Welcome to the Tech Blog</h2>
+        {{#if posts.length}}
+            <ul class="post-list">
+                {{#each posts}}
+                    <li>
+                        <h3>{{this.title}}</h3>
+                        <p>{{this.dateCreated}}</p>
+                    </li>
+                {{/each}}
+            </ul>
+        {{else}}
+            <p>No posts found.</p>
+        {{/if}}
+    </section>
+{{/content}}
