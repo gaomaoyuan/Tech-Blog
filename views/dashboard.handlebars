@@ -1,0 +1,14 @@
+<h2>Your Dashboard</h2>
+<button id="new-post-button">Create New Post</button>
+{{#each userPosts}}
+  <div class="post-preview">
+    <a href="/dashboard/edit/{{this.id}}">
+      <h2 class="post-title">{{this.title}}</h2>
+      <p class="post-content">{{this.content}}</p>
+    </a>
+    <p class="post-meta">
+      Posted on {{format_date this.date_created}}
+    </p>
+    <button class="delete-post-button" data-id="{{this.id}}">Delete</button>
+  </div>
+{{/each}}

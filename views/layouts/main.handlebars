@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS Blog</title>
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+  <!-- Including the nav partial -->
+  {{> nav}}
+
+  <!-- The {{{body}}} expression is a placeholder for the content of each specific view. -->
+  <main>
+    {{{body}}}
+  </main>
+
+  <!-- Link to your client-side JavaScript file -->
+  <script src="/js/app.js"></script>
+</body>
+
+</html>
